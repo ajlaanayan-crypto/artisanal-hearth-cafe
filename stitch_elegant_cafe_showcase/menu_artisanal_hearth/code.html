@@ -1,0 +1,382 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Artisanal Hearth - Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#bd9f83",
+                      "on-background": "#1b1c19",
+                      "tertiary-container": "#323f09",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fbf9f4",
+                      "outline": "#80756c",
+                      "tertiary": "#1e2800",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container": "#f0eee9",
+                      "surface-container-low": "#f5f3ee",
+                      "outline-variant": "#d2c4ba",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#3e4c16",
+                      "primary-fixed-dim": "#e1c1a4",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-surface": "#30312e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#9bab6a",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary-fixed-variant": "#534434",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#fedcbe",
+                      "error-container": "#ffdad6",
+                      "primary": "#33210d",
+                      "surface-bright": "#fbf9f4",
+                      "on-surface": "#1b1c19",
+                      "on-secondary-fixed": "#241a0c",
+                      "secondary-container": "#f5dfc8",
+                      "on-surface-variant": "#4e453d",
+                      "on-primary-fixed": "#291806",
+                      "secondary-fixed": "#f5dfc8",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#59422c",
+                      "on-tertiary-fixed": "#161f00",
+                      "primary-container": "#4b3621",
+                      "surface-variant": "#e4e2dd",
+                      "inverse-primary": "#e1c1a4",
+                      "tertiary-fixed-dim": "#bdce89",
+                      "on-secondary-container": "#726250",
+                      "background": "#fbf9f4",
+                      "tertiary-fixed": "#d9eaa3",
+                      "secondary": "#6b5c4a",
+                      "surface-tint": "#725a42",
+                      "secondary-fixed-dim": "#d8c3ad"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px",
+                      "container-max": "1200px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "\"Source Serif 4\""
+                      ],
+                      "caption": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(251, 249, 244, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(210, 196, 186, 0.3);
+        }
+        
+        .menu-item-hover:hover {
+            background-color: rgba(245, 223, 200, 0.1);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 4px 24px rgba(51, 33, 13, 0.04);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm ease-in-out transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto md:px-margin-desktop">
+<button aria-label="Menu" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex-1 md:flex-none flex justify-center md:justify-start">
+<span class="font-headline-md text-headline-md text-primary">Artisanal Hearth</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-gutter items-center ml-auto mr-gutter">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button aria-label="Shopping Bag" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="text-center mb-stack-lg mt-stack-md">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Our Menu</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Sourced thoughtfully, prepared precisely. Experience our collection of artisanal beverages and daily baked goods.</p>
+</div>
+<!-- Menu Categories Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Coffee Section -->
+<section class="md:col-span-8 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10">
+<div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+<span class="material-symbols-outlined text-secondary">local_cafe</span>
+<h2 class="font-headline-md text-headline-md text-primary">Coffee</h2>
+</div>
+<div class="flex flex-col gap-0">
+<!-- Item -->
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Pour Over</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Single-origin beans, precision brewed. Ask about today's roast profile.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$5.50</div>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Cortado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Equal parts espresso and textured steamed milk.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$4.50</div>
+</div>
+<!-- Item w/ Badge -->
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md text-primary">Lavender Honey Latte</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-semibold">Seasonal</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">House-made lavender syrup, local wild honey, espresso, and steamed oat milk.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$6.50</div>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Espresso Tonic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Double shot over premium tonic water with a twist of orange peel.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$5.00</div>
+</div>
+</div>
+</section>
+<!-- Featured Image / Promo (Bento block) -->
+<div class="md:col-span-4 rounded-lg overflow-hidden ambient-shadow relative min-h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A top-down view of a beautifully poured latte with intricate fern latte art, resting on a textured ceramic saucer on a rustic wooden table. Warm, natural morning light filters through a window, creating soft shadows and highlighting the rich crema of the coffee. The mood is calm, artisanal, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuSPcv-KheZIWfarjY3lO3azTcrwRkezWVdSGh9LQMh-rOLrp09E2g8Re3_sQKYbB0q-id3yt6dLV0-fBgVRl-Bmi0DT5zrbwx31XTOczPWIxAPm4ZGxx1JZmBtyDfrZIu1_G0ghqQXxKSp7Z9x46iGqDpqgZGDKpBiSaOAUxWckSZEo4x0Yn65Cfvp3jAbVmrL38lLKPkBZ9Z65H0kPcvi5jsryyQzzKXzaTtdXcutA0ZHRIdzFpBtsq5s8zj8H0xHNyRPvbPZ7Uf">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<p class="font-label-md text-label-md text-on-primary mb-1 opacity-90">Current Roast</p>
+<h3 class="font-headline-md text-headline-md text-on-primary">Ethiopia Yirgacheffe</h3>
+<p class="font-caption text-caption text-on-primary mt-2 opacity-80">Floral notes with bright citrus finish.</p>
+</div>
+</div>
+<!-- Pastries Section -->
+<section class="md:col-span-7 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10 mt-stack-md md:mt-0">
+<div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+<span class="material-symbols-outlined text-secondary">bakery_dining</span>
+<h2 class="font-headline-md text-headline-md text-primary">Freshly Baked</h2>
+</div>
+<div class="flex flex-col gap-0">
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Almond Croissant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Twice-baked, filled with rich frangipane and topped with toasted almonds.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$4.75</div>
+</div>
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md text-primary">Cardamom Bun</h3>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-semibold">House Specialty</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Swedish-style knotted bun, freshly ground cardamom, pearl sugar.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$4.50</div>
+</div>
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Seasonal Galette</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Rustic tart with local stone fruit and thyme.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$6.00</div>
+</div>
+</div>
+</section>
+<!-- Tea Section -->
+<section class="md:col-span-5 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10 mt-stack-md md:mt-0">
+<div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+<span class="material-symbols-outlined text-secondary">emoji_food_beverage</span>
+<h2 class="font-headline-md text-headline-md text-primary">Loose Leaf Tea</h2>
+</div>
+<div class="flex flex-col gap-0">
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Matcha Ceremonial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Uji matcha, whisked to order. Earthy and smooth.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$6.00</div>
+</div>
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Earl Grey Reserve</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Black tea, cold-pressed bergamot oil, cornflowers.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$4.50</div>
+</div>
+<div class="group flex justify-between items-start py-stack-md border-b border-outline-variant/10 last:border-0 menu-item-hover transition-colors rounded-lg px-unit">
+<div class="pr-stack-md">
+<h3 class="font-label-md text-label-md text-primary mb-1">Silver Needle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Delicate white tea, subtle melon notes, naturally sweet.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary shrink-0">$5.50</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-md flex justify-around items-center py-2 px-2 bg-surface/70 backdrop-blur-md z-50 shadow-lg border border-outline-variant/20 rounded-full">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant scale-95 active:scale-90 transition-transform hover:bg-surface-container-highest transition-all duration-300 px-4 py-1 rounded-full">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[10px] mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-1.5 scale-95 active:scale-90 transition-transform hover:bg-surface-container-highest transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-label-md text-[10px] mt-1">Menu</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant scale-95 active:scale-90 transition-transform hover:bg-surface-container-highest transition-all duration-300 px-4 py-1 rounded-full">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-[10px] mt-1">Our Story</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant scale-95 active:scale-90 transition-transform hover:bg-surface-container-highest transition-all duration-300 px-4 py-1 rounded-full">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-md text-[10px] mt-1">Contact</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full pb-24 md:pb-12 bg-surface-container-low dark:bg-surface-container-lowest mt-section-gap px-margin-mobile py-stack-lg flex flex-col gap-stack-md text-center border-t border-outline-variant/10">
+<div class="font-headline-md text-headline-md text-primary mb-stack-sm">Artisanal Hearth</div>
+<div class="flex flex-col md:flex-row justify-center gap-stack-sm md:gap-gutter font-body-md text-body-md">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed underline decoration-primary/30 transition-all duration-200" href="#">123 Hearth Way, Urban Center</a>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="text-secondary dark:text-secondary-fixed-dim">Mon-Fri: 7am-6pm</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="text-secondary dark:text-secondary-fixed-dim">Sat-Sun: 8am-8pm</span>
+</div>
+<div class="flex justify-center gap-stack-md mt-stack-sm">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 font-label-md text-label-md" href="#">Instagram</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 font-label-md text-label-md" href="#">Pinterest</a>
+</div>
+<div class="mt-stack-md font-caption text-caption text-secondary dark:text-secondary-fixed-dim opacity-70">
+            © 2024 Artisanal Hearth. Slow Living, High Precision.
+        </div>
+</footer>
+
+
+</body></html>

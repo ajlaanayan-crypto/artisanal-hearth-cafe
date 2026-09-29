@@ -1,0 +1,391 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact &amp; Reservations - Artisanal Hearth</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#bd9f83",
+                      "on-background": "#1b1c19",
+                      "tertiary-container": "#323f09",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fbf9f4",
+                      "outline": "#80756c",
+                      "tertiary": "#1e2800",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container": "#f0eee9",
+                      "surface-container-low": "#f5f3ee",
+                      "outline-variant": "#d2c4ba",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#3e4c16",
+                      "primary-fixed-dim": "#e1c1a4",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-surface": "#30312e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#9bab6a",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary-fixed-variant": "#534434",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#fedcbe",
+                      "error-container": "#ffdad6",
+                      "primary": "#33210d",
+                      "surface-bright": "#fbf9f4",
+                      "on-surface": "#1b1c19",
+                      "on-secondary-fixed": "#241a0c",
+                      "secondary-container": "#f5dfc8",
+                      "on-surface-variant": "#4e453d",
+                      "on-primary-fixed": "#291806",
+                      "secondary-fixed": "#f5dfc8",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#59422c",
+                      "on-tertiary-fixed": "#161f00",
+                      "primary-container": "#4b3621",
+                      "surface-variant": "#e4e2dd",
+                      "inverse-primary": "#e1c1a4",
+                      "tertiary-fixed-dim": "#bdce89",
+                      "on-secondary-container": "#726250",
+                      "background": "#fbf9f4",
+                      "tertiary-fixed": "#d9eaa3",
+                      "secondary": "#6b5c4a",
+                      "surface-tint": "#725a42",
+                      "secondary-fixed-dim": "#d8c3ad"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px",
+                      "container-max": "1200px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "\"Source Serif 4\""
+                      ],
+                      "caption": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .ambient-shadow-sm {
+            box-shadow: 0 2px 8px rgba(51, 33, 13, 0.04), 0 1px 2px rgba(51, 33, 13, 0.02);
+        }
+        .ambient-shadow-md {
+            box-shadow: 0 4px 16px rgba(51, 33, 13, 0.06), 0 2px 4px rgba(51, 33, 13, 0.03);
+        }
+        .input-soft {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .input-soft:focus {
+            outline: none;
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 1px theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col pt-16 md:pt-0">
+<!-- TopAppBar (Desktop) -->
+<header class="hidden md:flex fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm ease-in-out transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Artisanal Hearth</h1>
+<nav class="hidden lg:flex space-x-gutter">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-primary font-bold hover:text-primary-container transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm ease-in-out transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Artisanal Hearth</h1>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap pb-32 md:pb-section-gap">
+<div class="mb-stack-lg text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Visit The Sanctuary</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Reserve your table or drop by for a quiet moment. We're here to provide a warm space and exceptional craft.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Reservation Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl ambient-shadow-md p-6 md:p-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-md border-b border-outline-variant/30 pb-4">Make a Reservation</h3>
+<form class="space-y-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="calendar_month">calendar_month</span>
+<input class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 pl-10 pr-3 font-body-md text-body-md text-on-surface placeholder-outline-variant" type="date">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Time</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="schedule">schedule</span>
+<select class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 pl-10 pr-8 font-body-md text-body-md text-on-surface appearance-none">
+<option>09:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>01:00 PM</option>
+</select>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Party Size</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="group">group</span>
+<select class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 pl-10 pr-8 font-body-md text-body-md text-on-surface appearance-none">
+<option>1 Person</option>
+<option>2 People</option>
+<option>3 People</option>
+<option>4 People</option>
+<option>5+ People</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md pt-stack-sm border-t border-outline-variant/20">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Name</label>
+<input class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant" placeholder="Your full name" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Email</label>
+<input class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant" placeholder="Email address" type="email">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Special Requests</label>
+<textarea class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant resize-none" placeholder="Any dietary restrictions or seating preferences?" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container transition-colors duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]" type="button">
+                        Confirm Reservation
+                    </button>
+</form>
+</div>
+<!-- Info & Location -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Map Card -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-sm overflow-hidden h-64 relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A beautifully shot, high-resolution top-down map view of an urban neighborhood, rendered in a warm, sepia-toned minimalist style matching the Artisanal Hearth aesthetic. Soft sunlight casts gentle shadows on minimal building blocks, emphasizing a slow-living, curated coffee shop location. Colors are dominated by parchment beige, soft sage greens for parks, and primary roast browns for roads." data-location="Urban Center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSrtj0ByU6TqTX4Q75ybKlpyqp4R4AHAW5RX8muMy_N723F8rCw0IoCHQ2dTug5_UUDMESk1oESGPIBAhBefCP_ZEeHJLOB8I7Fnq9idh9PukGahSsdaHZ7bVyd_BK92NZd3tpVbKNIuUVKevelvkbGGTsfGelM-7LpDQFKGxd-gGAvbMZ7Vdv0sW-XtYbYl7c1DbUTapXLCSK8P1hV2vRfGb84d311kUw75mtqWmch4ZLjHM_Gg2IHAChQInhGXgfNJdrJJs8JQux">
+<div class="absolute inset-0 bg-surface/10 backdrop-blur-[1px]"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-sm p-4 rounded-lg shadow-sm border border-outline-variant/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold">Artisanal Hearth</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">123 Hearth Way, Urban Center</p>
+<a class="font-label-md text-label-md text-secondary hover:text-primary underline decoration-secondary/30 mt-1 inline-block transition-colors" href="#">Get Directions</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Details Card -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-sm p-6 md:p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Connect With Us</h3>
+<ul class="space-y-stack-md">
+<li class="flex items-center gap-4 border-b border-outline-variant/10 pb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="phone">phone</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-sm">Phone</p>
+<p class="font-body-md text-body-md text-on-surface">+1 (555) 123-4567</p>
+</div>
+</li>
+<li class="flex items-center gap-4 border-b border-outline-variant/10 pb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-sm">Email</p>
+<p class="font-body-md text-body-md text-on-surface">hello@artisanalhearth.com</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-sm mb-1">Hours</p>
+<div class="space-y-1 font-body-md text-body-md text-on-surface text-sm">
+<div class="flex justify-between w-48">
+<span class="text-on-surface-variant">Mon - Fri</span>
+<span class="">7:00 AM - 6:00 PM</span>
+</div>
+<div class="flex justify-between w-48">
+<span class="text-on-surface-variant">Sat - Sun</span>
+<span class="">8:00 AM - 8:00 PM</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-4 left-4 right-4 flex justify-around items-center py-2 px-2 bg-surface/70 backdrop-blur-md border border-outline-variant/20 shadow-lg z-50 rounded-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-md text-label-md text-[10px]">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-label-md text-[10px]">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-all duration-300 scale-95 active:scale-90 p-2 rounded-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+<span class="font-label-md text-label-md text-[10px]">Contact</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full pb-24 md:pb-8 bg-surface-container-low dark:bg-surface-container-lowest mt-section-gap px-margin-mobile py-stack-lg flex flex-col gap-stack-md text-center border-t border-outline-variant/10">
+<div class="font-headline-md text-headline-md text-primary mb-2">Artisanal Hearth</div>
+<div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-4">
+<a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-colors duration-200" href="#">123 Hearth Way, Urban Center</a>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="font-body-md text-body-md text-secondary">Mon-Fri: 7am-6pm</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="font-body-md text-body-md text-secondary">Sat-Sun: 8am-8pm</span>
+</div>
+<div class="flex justify-center gap-6 mb-4">
+<a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-colors duration-200" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-colors duration-200" href="#">Pinterest</a>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">© 2024 Artisanal Hearth. Slow Living, High Precision.</p>
+</footer>
+
+
+</body></html>

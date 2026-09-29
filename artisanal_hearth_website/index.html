@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Artisanal Hearth - The Modern Sanctuary</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Theme Typography -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#bd9f83",
+                        "on-background": "#1b1c19",
+                        "tertiary-container": "#323f09",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f4",
+                        "outline": "#80756c",
+                        "tertiary": "#1e2800",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container": "#f0eee9",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#d2c4ba",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3e4c16",
+                        "primary-fixed-dim": "#e1c1a4",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#9bab6a",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#534434",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#fedcbe",
+                        "error-container": "#ffdad6",
+                        "primary": "#33210d",
+                        "surface-bright": "#fbf9f4",
+                        "on-surface": "#1b1c19",
+                        "on-secondary-fixed": "#241a0c",
+                        "secondary-container": "#f5dfc8",
+                        "on-surface-variant": "#4e453d",
+                        "on-primary-fixed": "#291806",
+                        "secondary-fixed": "#f5dfc8",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#59422c",
+                        "on-tertiary-fixed": "#161f00",
+                        "primary-container": "#4b3621",
+                        "surface-variant": "#e4e2dd",
+                        "inverse-primary": "#e1c1a4",
+                        "tertiary-fixed-dim": "#bdce89",
+                        "on-secondary-container": "#726250",
+                        "background": "#fbf9f4",
+                        "tertiary-fixed": "#d9eaa3",
+                        "secondary": "#6b5c4a",
+                        "surface-tint": "#725a42",
+                        "secondary-fixed-dim": "#d8c3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["\"Source Serif 4\""],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Style Sheet -->
+    <link href="style.css" rel="stylesheet">
+    <!-- Global SPA Script & Router -->
+    <script src="shared.js" defer></script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Dynamic TopAppBar Header (Common across all views) -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm ease-in-out transition-all duration-300 border-b border-outline-variant/10">
+    <div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto md:px-margin-desktop">
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle md:hidden text-primary hover:text-primary-container transition-colors duration-300 flex items-center justify-center w-10 h-10">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+        </button>
+        <!-- Brand Logo -->
+        <a href="#home" class="font-headline-md text-headline-md text-primary font-extrabold tracking-tight">
+            Artisanal Hearth
+        </a>
+        <!-- Desktop Navigation cluster (Hidden on mobile) -->
+        <nav class="hidden md:flex items-center gap-gutter">
+            <a id="nav-link-home" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30 font-semibold" href="#home">Home</a>
+            <a id="nav-link-menu" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30 font-semibold" href="#menu">Menu</a>
+            <a id="nav-link-story" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30 font-semibold" href="#story">Our Story</a>
+            <a id="nav-link-contact" class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30 font-semibold" href="#contact">Contact</a>
+        </nav>
+        <!-- Shopping Bag Trigger -->
+        <button class="cart-toggle text-primary hover:text-primary-container transition-colors duration-300 flex items-center justify-center w-10 h-10">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+        </button>
+    </div>
+</header>
+
+<!-- Main Wrapper containing the switchable SPA views -->
+<main class="w-full">
+
+    <!-- ==========================================
+         1. HOME VIEW SECTION
+         ========================================== -->
+    <div id="home-view" class="view-section active pt-28 pb-32 md:pb-24 max-w-container-max mx-auto">
+        <!-- Hero Section -->
+        <section class="px-margin-mobile md:px-margin-desktop mb-section-gap flex flex-col md:flex-row gap-stack-lg items-center">
+            <div class="flex-1 flex flex-col gap-stack-md relative z-10 md:pr-12">
+                <!-- Animated Steam Coffee Icon -->
+                <div class="flex items-center gap-2 mb-2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary">
+                        <path class="steam-path steam-1" d="M8 6C8 4.5 9 4.5 9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path class="steam-path steam-2" d="M12 6C12 4.5 13 4.5 13 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path class="steam-path steam-3" d="M16 6C16 4.5 17 4.5 17 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M5 10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14C19 16.7614 16.7614 19 14 19H10C7.23858 19 5 16.7614 5 14V10Z" fill="#33210d" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M19 9H20.5C21.8807 9 23 10.1193 23 11.5V12.5C23 13.8807 21.8807 15 20.5 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-secondary font-label-md text-xs uppercase tracking-widest">Est. 2024</span>
+                </div>
+                <h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary max-w-lg">
+                    Your Neighborhood Sanctuary
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Experience slow living through high-precision coffee. A tactile space crafted for mindful mornings and quiet afternoons.
+                </p>
+                <div class="mt-stack-sm flex gap-4">
+                    <a href="#menu" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg border border-primary-fixed-dim/30 hover:bg-primary-container soft-transition flex items-center gap-2 shadow-[0_4px_12px_rgba(51,33,13,0.15)]">
+                        Explore Menu
+                    </a>
+                    <a href="#contact" class="bg-surface-container text-primary font-label-md text-label-md px-6 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high soft-transition flex items-center">
+                        Reserve Table
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full relative h-[380px] md:h-[550px] rounded-xl overflow-hidden ambient-shadow image-grain bg-surface-container-highest">
+                <img class="w-full h-full object-cover soft-transition hover:scale-105 duration-700" alt="Meticulously poured latte art rosette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtMpk1f4GNl1I-pzr63r-_8v9VaWfu8BAQgMz4tZJmYF-9PKFpmp0hCvpR0Nvi_UwHN_-KqWBm_phL-nvXfg8t64UPp9G9RW9nh_LKiZfNhSdhd9eBZMBCUnKK5GLm6KZ-bdj09AGRGxAS35curNrOkqj105tSkA5ynNZvrrnzFdwkLdHWNxzw25-nrjHwGXdSxqY9MVwvLOCwaRsPOCIM2I8jVhBSDYazpOB4Xpa0qnbYbq444MZ5RsPRisWcwIIE_aekGUDymlyT">
+            </div>
+        </section>
+
+        <!-- Today's Specials (Bento Grid) -->
+        <section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant/30 pb-4">
+                <h2 class="font-headline-md text-headline-md text-primary">Today's Specials</h2>
+                <a class="font-label-md text-label-md text-secondary hover:text-primary soft-transition flex items-center gap-1" href="#menu">
+                    View all <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[auto] md:auto-rows-[300px]">
+                <!-- Featured Item -->
+                <div class="md:col-span-8 rounded-lg overflow-hidden bg-surface-container-lowest ambient-shadow ambient-shadow-hover soft-transition group relative flex flex-col md:flex-row border border-outline-variant/15 mb-gutter md:mb-0">
+                    <div class="w-full md:w-1/2 h-52 md:h-full relative overflow-hidden bg-surface-container-high image-grain">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Iced matcha latte gradient layers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOLCLSkBAEt0CEOrfTLBPwIjUlht758qZN0AYH2Xobf9nvGvwkDaLLtlFcHB6Oh2mNpBs_CI8ycXXMl9u5-gJcqdozjODR0S7l7AeWxzr3zJy70fUa93gDk3CW8G6am7wFTsfribixcY24Meb9iS65se9Qr0wCDEaN08WFhLOJIxuHLFjiyWV0lv7tq0ESNUxXR5lKzbcnFBNLzH1lnA1hiH185-UgabOtHUqmvn1btYj6k3x708EcfCzIa2r-joyamrXaN6mRmnDH">
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col justify-center w-full md:w-1/2 relative z-10 bg-surface-container-lowest">
+                        <div class="inline-flex items-center gap-1 bg-tertiary-container text-on-tertiary-container font-caption text-caption px-3 py-1 rounded-full w-max mb-stack-sm">
+                            <span class="material-symbols-outlined text-[14px]">eco</span> Seasonal
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">Kyoto Matcha Reserve</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Stone-ground ceremonial grade matcha balanced with delicate steamed oat milk and a touch of organic agave.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="font-label-md text-label-md text-primary text-lg">$6.50</span>
+                            <button onclick="addToCart({ id: 'kyoto-matcha', name: 'Kyoto Matcha Reserve', price: 6.50, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOLCLSkBAEt0CEOrfTLBPwIjUlht758qZN0AYH2Xobf9nvGvwkDaLLtlFcHB6Oh2mNpBs_CI8ycXXMl9u5-gJcqdozjODR0S7l7AeWxzr3zJy70fUa93gDk3CW8G6am7wFTsfribixcY24Meb9iS65se9Qr0wCDEaN08WFhLOJIxuHLFjiyWV0lv7tq0ESNUxXR5lKzbcnFBNLzH1lnA1hiH185-UgabOtHUqmvn1btYj6k3x708EcfCzIa2r-joyamrXaN6mRmnDH' })" aria-label="Add to order" class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-[#33210d] hover:text-white soft-transition shadow-sm">
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Secondary Item -->
+                <div class="md:col-span-4 rounded-lg overflow-hidden bg-surface-container-lowest ambient-shadow ambient-shadow-hover soft-transition group relative flex flex-col border border-outline-variant/15">
+                    <div class="h-44 w-full relative overflow-hidden bg-surface-container-high image-grain">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Fresh baked almond croissant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiAbRl-amTXuOL0DDrCIKUZoQTX0vbDwgbv5St7TlNsOYZfk6sSGZjHw_gYHWizftiNlP6Vihite6VoWxdiAitlKpt8Gsg51ZFhAlr9xe_IswCH8NGMWFoJxz3QHHZcM3Frlaj1m0V0JUmOhcPBOGz_8Xjdatgq8cPt4Jg3rcrBPHwyZn1iQ_2gcA5k1KxpWjGlHoIosXiUcTtLogjk3EFCsdhXwuhD2zUCuvYAkDALMC1u7QgIN8x0QzqJM8qI5HPt8WJFQec9srp">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow bg-surface-container-lowest">
+                        <h3 class="font-headline-md text-headline-md text-primary text-xl mb-1">Almond Croissant</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">
+                            Twice-baked with rich frangipane filling and topped with toasted slivers.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto pt-2 border-t border-outline-variant/10">
+                            <span class="font-label-md text-label-md text-primary">$4.75</span>
+                            <button onclick="addToCart({ id: 'almond-croissant', name: 'Almond Croissant', price: 4.75, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCiAbRl-amTXuOL0DDrCIKUZoQTX0vbDwgbv5St7TlNsOYZfk6sSGZjHw_gYHWizftiNlP6Vihite6VoWxdiAitlKpt8Gsg51ZFhAlr9xe_IswCH8NGMWFoJxz3QHHZcM3Frlaj1m0V0JUmOhcPBOGz_8Xjdatgq8cPt4Jg3rcrBPHwyZn1iQ_2gcA5k1KxpWjGlHoIosXiUcTtLogjk3EFCsdhXwuhD2zUCuvYAkDALMC1u7QgIN8x0QzqJM8qI5HPt8WJFQec9srp' })" aria-label="Add to order" class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-[#33210d] hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-lg">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         2. MENU VIEW SECTION
+         ========================================== -->
+    <div id="menu-view" class="view-section pt-28 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+        <!-- Page Header -->
+        <div class="text-center mb-6 mt-stack-md">
+            <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Our Menu</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Sourced thoughtfully, prepared precisely. Experience our collection of artisanal beverages and daily baked goods.</p>
+            
+            <!-- Interactive Search Bar -->
+            <div class="max-w-md mx-auto mt-6 relative px-4 sm:px-0">
+                <span class="material-symbols-outlined absolute left-7 sm:left-3.5 top-1/2 -translate-y-1/2 text-outline">search</span>
+                <input id="menu-search" type="text" placeholder="Search beverages, pastries, tea..." class="w-full bg-surface border border-outline-variant/50 rounded-full py-2.5 pl-10 pr-4 text-sm text-[#33210d] placeholder-[#80756c]/70 focus:outline-none focus:border-[#33210d] focus:ring-1 focus:ring-[#33210d] soft-transition">
+            </div>
+
+            <!-- Interactive Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mt-6" id="filter-tabs">
+                <button data-filter="all" class="filter-tab active px-5 py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider bg-[#33210d] text-white soft-transition shadow-sm flex items-center gap-1.5">
+                    <span>All Items</span>
+                </button>
+                <button data-filter="coffee" class="filter-tab px-5 py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider bg-[#f5f3ee] text-[#6b5c4a] hover:bg-[#eae8e3] hover:text-[#33210d] soft-transition flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px]">local_cafe</span>
+                    <span>Coffee</span>
+                </button>
+                <button data-filter="bakery" class="filter-tab px-5 py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider bg-[#f5f3ee] text-[#6b5c4a] hover:bg-[#eae8e3] hover:text-[#33210d] soft-transition flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+                    <span>Freshly Baked</span>
+                </button>
+                <button data-filter="tea" class="filter-tab px-5 py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider bg-[#f5f3ee] text-[#6b5c4a] hover:bg-[#eae8e3] hover:text-[#33210d] soft-transition flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px]">emoji_food_beverage</span>
+                    <span>Tea</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Categories Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-8">
+            
+            <!-- Coffee Section -->
+            <section id="sec-coffee" data-sec-category="coffee" class="menu-section md:col-span-8 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10">
+                <div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+                    <span class="material-symbols-outlined text-secondary">local_cafe</span>
+                    <h2 class="font-headline-md text-headline-md text-primary">Coffee</h2>
+                </div>
+                <div class="flex flex-col gap-0 divide-y divide-outline-variant/10">
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Pour Over" data-desc="Single-origin beans, precision brewed. Ask about today's roast profile.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Pour Over</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Single-origin beans, precision brewed. Ask about today's roast profile.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$5.50</span>
+                            <button onclick="addToCart({ id: 'pour-over', name: 'Pour Over', price: 5.50 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Cortado" data-desc="Equal parts espresso and textured steamed milk.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Cortado</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Equal parts espresso and textured steamed milk.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$4.50</span>
+                            <button onclick="addToCart({ id: 'cortado', name: 'Cortado', price: 4.50 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item w/ Badge -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Lavender Honey Latte" data-desc="House-made lavender syrup, local wild honey, espresso, and steamed oat milk.">
+                        <div class="pr-stack-md">
+                            <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                <h3 class="font-label-md text-label-md text-primary">Lavender Honey Latte</h3>
+                                <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-semibold">Seasonal</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">House-made lavender syrup, local wild honey, espresso, and steamed oat milk.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$6.50</span>
+                            <button onclick="addToCart({ id: 'lavender-latte', name: 'Lavender Honey Latte', price: 6.50, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuSPcv-KheZIWfarjY3lO3azTcrwRkezWVdSGh9LQMh-rOLrp09E2g8Re3_sQKYbB0q-id3yt6dLV0-fBgVRl-Bmi0DT5zrbwx31XTOczPWIxAPm4ZGxx1JZmBtyDfrZIu1_G0ghqQXxKSp7Z9x46iGqDpqgZGDKpBiSaOAUxWckSZEo4x0Yn65Cfvp3jAbVmrL38lLKPkBZ9Z65H0kPcvi5jsryyQzzKXzaTtdXcutA0ZHRIdzFpBtsq5s8zj8H0xHNyRPvbPZ7Uf' })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Espresso Tonic" data-desc="Double shot over premium tonic water with a twist of orange peel.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Espresso Tonic</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Double shot over premium tonic water with a twist of orange peel.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$5.00</span>
+                            <button onclick="addToCart({ id: 'espresso-tonic', name: 'Espresso Tonic', price: 5.00 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Image / Promo (Bento block) -->
+            <div id="promo-card" class="md:col-span-4 rounded-lg overflow-hidden ambient-shadow relative min-h-[300px] border border-outline-variant/15">
+                <img class="absolute inset-0 w-full h-full object-cover" alt="Coffee craft latte art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuSPcv-KheZIWfarjY3lO3azTcrwRkezWVdSGh9LQMh-rOLrp09E2g8Re3_sQKYbB0q-id3yt6dLV0-fBgVRl-Bmi0DT5zrbwx31XTOczPWIxAPm4ZGxx1JZmBtyDfrZIu1_G0ghqQXxKSp7Z9x46iGqDpqgZGDKpBiSaOAUxWckSZEo4x0Yn65Cfvp3jAbVmrL38lLKPkBZ9Z65H0kPcvi5jsryyQzzKXzaTtdXcutA0ZHRIdzFpBtsq5s8zj8H0xHNyRPvbPZ7Uf">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-stack-md w-full">
+                    <p class="font-label-md text-label-md text-on-primary mb-1 opacity-90">Current Roast</p>
+                    <h3 class="font-headline-md text-headline-md text-on-primary">Ethiopia Yirgacheffe</h3>
+                    <p class="font-caption text-caption text-on-primary mt-2 opacity-80">Floral notes with bright citrus finish.</p>
+                </div>
+            </div>
+
+            <!-- Pastries Section -->
+            <section id="sec-bakery" data-sec-category="bakery" class="menu-section md:col-span-7 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10 mt-stack-md md:mt-0">
+                <div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+                    <span class="material-symbols-outlined text-secondary">bakery_dining</span>
+                    <h2 class="font-headline-md text-headline-md text-primary">Freshly Baked</h2>
+                </div>
+                <div class="flex flex-col gap-0 divide-y divide-outline-variant/10">
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Almond Croissant" data-desc="Twice-baked, filled with rich frangipane and topped with toasted almonds.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Almond Croissant</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Twice-baked, filled with rich frangipane and topped with toasted almonds.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$4.75</span>
+                            <button onclick="addToCart({ id: 'almond-croissant', name: 'Almond Croissant', price: 4.75, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCiAbRl-amTXuOL0DDrCIKUZoQTX0vbDwgbv5St7TlNsOYZfk6sSGZjHw_gYHWizftiNlP6Vihite6VoWxdiAitlKpt8Gsg51ZFhAlr9xe_IswCH8NGMWFoJxz3QHHZcM3Frlaj1m0V0JUmOhcPBOGz_8Xjdatgq8cPt4Jg3rcrBPHwyZn1iQ_2gcA5k1KxpWjGlHoIosXiUcTtLogjk3EFCsdhXwuhD2zUCuvYAkDALMC1u7QgIN8x0QzqJM8qI5HPt8WJFQec9srp' })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Cardamom Bun" data-desc="Swedish-style knotted bun, freshly ground cardamom, pearl sugar.">
+                        <div class="pr-stack-md">
+                            <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                <h3 class="font-label-md text-label-md text-primary">Cardamom Bun</h3>
+                                <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-semibold">House Specialty</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Swedish-style knotted bun, freshly ground cardamom, pearl sugar.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$4.50</span>
+                            <button onclick="addToCart({ id: 'cardamom-bun', name: 'Cardamom Bun', price: 4.50 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Seasonal Galette" data-desc="Rustic tart with local stone fruit and thyme.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Seasonal Galette</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Rustic tart with local stone fruit and thyme.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$6.00</span>
+                            <button onclick="addToCart({ id: 'seasonal-galette', name: 'Seasonal Galette', price: 6.00 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tea Section -->
+            <section id="sec-tea" data-sec-category="tea" class="menu-section md:col-span-5 bg-surface-container-lowest rounded-lg ambient-shadow p-stack-md md:p-stack-lg border border-outline-variant/10 mt-stack-md md:mt-0">
+                <div class="flex items-center gap-stack-sm mb-stack-lg border-b border-outline-variant/20 pb-stack-sm">
+                    <span class="material-symbols-outlined text-secondary">emoji_food_beverage</span>
+                    <h2 class="font-headline-md text-headline-md text-primary">Loose Leaf Tea</h2>
+                </div>
+                <div class="flex flex-col gap-0 divide-y divide-outline-variant/10">
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Matcha Ceremonial" data-desc="Uji matcha, whisked to order. Earthy and smooth.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Matcha Ceremonial</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Uji matcha, whisked to order. Earthy and smooth.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$6.00</span>
+                            <button onclick="addToCart({ id: 'matcha-ceremonial', name: 'Matcha Ceremonial', price: 6.00 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Earl Grey Reserve" data-desc="Black tea, cold-pressed bergamot oil, cornflowers.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Earl Grey Reserve</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Black tea, cold-pressed bergamot oil, cornflowers.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$4.50</span>
+                            <button onclick="addToCart({ id: 'earl-grey', name: 'Earl Grey Reserve', price: 4.50 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="menu-item-row group flex justify-between items-center py-4 px-unit soft-transition hover:bg-[#f5dfc8]/10 rounded-lg" data-name="Silver Needle" data-desc="Delicate white tea, subtle melon notes, naturally sweet.">
+                        <div class="pr-stack-md">
+                            <h3 class="font-label-md text-label-md text-primary mb-1">Silver Needle</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Delicate white tea, subtle melon notes, naturally sweet.</p>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-label-md text-label-md text-secondary">$5.50</span>
+                            <button onclick="addToCart({ id: 'silver-needle', name: 'Silver Needle', price: 5.50 })" aria-label="Add to order" class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-white soft-transition">
+                                <span class="material-symbols-outlined text-base">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         3. OUR STORY VIEW SECTION
+         ========================================== -->
+    <div id="story-view" class="view-section pt-28 pb-32 md:pb-24 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop">
+        <!-- Hero Section -->
+        <section class="mb-section-gap">
+            <div class="text-center mb-stack-lg">
+                <h1 class="font-headline-xl text-headline-xl text-primary mb-stack-sm md:font-headline-xl text-headline-lg-mobile md:text-headline-xl">The Hearth Philosophy</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A modern sanctuary built on the foundational belief that coffee is a craft, not a commodity.</p>
+            </div>
+            <div class="relative rounded-xl overflow-hidden aspect-[16/9] md:aspect-[21/9] ambient-shadow-md film-grain group border border-outline-variant/15">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Minimalist coffee shop interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEJVIXmo7e2c0qTW7HkB5r3uzUAI8HXC5mp4g6RuMOhgtgIuOwhLZ8ghJBiu_udQ3zZuLfBruqaisE29nl615W8c48G0oGjr4bounPyDCtCKtVIpyaLb5GyFxMDl2A4AVqXnRTm4WlGZmDCjYMiQrjR8lhapbjliwjJ5L7jzeslSj2KxIri5_gTtF0YAuKkLSzVc2KsRD6qJaTKr4QF3E08r54fClFi0zVN7-Xo2mhtpGB7VleHpxldNctbXPMTNWV9WxtyRIjCXU">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-stack-lg">
+                    <p class="font-headline-lg text-headline-lg text-surface-container-lowest max-w-xl md:font-headline-lg text-headline-md md:text-headline-lg">"We wanted to create a space that feels like a deep breath."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Roastery Section -->
+        <section class="mb-section-gap">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">The Roastery</h2>
+                    <div class="flex flex-col gap-stack-sm mb-stack-lg">
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Our journey begins long before the first drop hits the cup. We partner directly with small-lot farmers in high-altitude regions, ensuring fair compensation and sustainable practices.
+                        </p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Every batch is roasted in-house on our vintage cast-iron roaster, carefully monitored by human senses, not just algorithms. We believe the slight imperfections in a manual roast are what give our coffee its soul.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#323f09]/10 text-[#9bab6a] font-label-md text-xs px-4 py-1.5 rounded-full border border-[#9bab6a]/20">Fair Trade</span>
+                        <span class="bg-[#323f09]/10 text-[#9bab6a] font-label-md text-xs px-4 py-1.5 rounded-full border border-[#9bab6a]/20">Small Batch</span>
+                        <span class="bg-[#323f09]/10 text-[#9bab6a] font-label-md text-xs px-4 py-1.5 rounded-full border border-[#9bab6a]/20">Artisanal</span>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden ambient-shadow-sm film-grain aspect-[3/4]">
+                        <img class="w-full h-full object-cover" alt="Raw green coffee beans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXyT681CnjKP2D3QKoJRp-jbQBt1ju410MvxhwBoYIGwoJaaRBVUHbSXgjwDiCt3GU3D30opuviOrBxxo21irOFDNZKFr5fmQAHGGDvm6InCqFC5prAlbo2PEu2oBw9N0ZaenLqs8Mgm4qpRSl__WrNAppQ3HjnASGntd_ndtdh3Vyu8PXHhm9AATFwezNy0qbOOUlq4RW5a1paekcaREzsLz6zIdWnqY2M_FQJIc0fXhPslBfq69FE-PnJMy3Q5aVW2o3mGzKfS5T">
+                    </div>
+                    <div class="rounded-lg overflow-hidden ambient-shadow-sm film-grain aspect-[3/4] mt-8">
+                        <img class="w-full h-full object-cover" alt="Vintage cast-iron coffee roaster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZXlsD-_TFahVWM4BnSZv5SRUUPUxh9fhNANw_qQ4xNXsMKiDhMJrU6v7Gsm-sNOztXHP_QF0usE52DmYv31j_A4NSwY9kH6tgdoac2SeNL8QvIvy7AOy-Oy3vQx9r3mifWj6EiXBCFbP2ubrUc-5Um0auT_aUaAHcxN0NbeKVi3Qdni5KEi2kdumFyPkMfcZQveWALEQalKOdfInKadMCVbsdxmFCY0PRIDR6Yb9v7_dT170hSAfCRyp1QbeMQOtnej0G8nhP5BP4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Team -->
+        <section class="mb-section-gap bg-surface-container-low p-stack-lg rounded-xl md:p-[60px] border border-outline-variant/10">
+            <div class="text-center mb-stack-lg">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-sm md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Meet the Artisans</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto">The hands that craft your daily ritual.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Team Member 1 -->
+                <div class="bg-surface-container-lowest rounded-lg p-stack-md ambient-shadow-sm flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300 border border-outline-variant/10">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-stack-md film-grain">
+                        <img class="w-full h-full object-cover" alt="Elara Vance Head Roaster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu4EQ70oQweOGdyl3KS0LV1KmcBOVgMiK0HrPx2k-QjO-1R8Q9-huxN74Fzjq-8DcqGfIl5ZmmP39U7eZqhXQcg9HBPngfFtQPBbe545VNZ-qzOaTH76COO7jL7k66IvfSq8XzLRoffyE2GklDpWr30DMxTWauSqOKwWMtRHNZ55zPg7AiN-T2OYDOuPBqoKRW_nVVYc72l0veSOwfm81z37SXo2WotjXgCK6NaO-30H40IS1KyPXFqBwdZMLwBodIoYCOoIQ4NoFI">
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Elara Vance</h3>
+                    <p class="font-label-md text-label-md text-secondary mb-stack-sm uppercase tracking-wider">Head Roaster</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Translating raw potential into nuanced flavor profiles.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-surface-container-lowest rounded-lg p-stack-md ambient-shadow-sm flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300 border border-outline-variant/10">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-stack-md film-grain">
+                        <img class="w-full h-full object-cover" alt="Julian Thorne Lead Barista" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbe2NrOVDUW_VI5Q7gS4MPKdJrIbLMrU3xJmdqSOk4GMVjxuPzRf2GgJhftz_D7K0UVAkw9PmUuQlojHKj9KcZrHsjd0o3U4odLDATA_kGxfcnWRL57I4r8TnL-HpVCfvgogtSBb5EQCyFxINto6jn6JV142d8BChIUF--du9fI7i7Wbz7LHuLR1DDHxCxAlCOjwTgmXLUIs94HpnMZGcjdMTa7EybPARAOOd7cGCDyThnmziVxRtNCIPXmmtOEaVZ20J7S72rdAsd">
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Julian Thorne</h3>
+                    <p class="font-label-md text-label-md text-secondary mb-stack-sm uppercase tracking-wider">Lead Barista</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Mastering the delicate balance of extraction and milk texture.</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-surface-container-lowest rounded-lg p-stack-md ambient-shadow-sm flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300 border border-outline-variant/10">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-stack-md film-grain">
+                        <img class="w-full h-full object-cover" alt="Silas Mercer Pastry Chef" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWAkkPhGGpQgBSGXVi3c7Wi_ISvAuPsJ88xMRS06dCaRfdAWAf9GwOKbYcod5ddsm1fk3DrSlWEsJUR0aQJ8tBmKqSp8oMg5Chdf_sD8D_JJ-2KTkR6fLXZaUuo1tOwpTld501i20JfLOl5yPMFxkm1o_hYam63gn--fcjFHJVx61DQc92wCG4aXkKP_rYaD8cIPWolvvFTcukN7cHuAg1gNos29xnAr6wJKRDp2PuTYbIxUlf-A9AvPIjJxmo2aQVpOs-WOjrmn-d">
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Silas Mercer</h3>
+                    <p class="font-label-md text-label-md text-secondary mb-stack-sm uppercase tracking-wider">Pastry Chef</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Crafting the perfect textural companions to our coffee.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         4. CONTACT & RESERVATIONS VIEW SECTION
+         ========================================== -->
+    <div id="contact-view" class="view-section pt-28 pb-32 md:pb-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="mb-stack-lg text-center max-w-2xl mx-auto">
+            <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Visit The Sanctuary</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">Reserve your table or drop by for a quiet moment. We're here to provide a warm space and exceptional craft.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Reservation Form -->
+            <div class="lg:col-span-7 bg-surface-container-lowest rounded-xl ambient-shadow-md p-6 md:p-8 border border-outline-variant/10">
+                <h3 class="font-headline-md text-headline-md text-primary mb-stack-md border-b border-outline-variant/30 pb-4">Make a Reservation</h3>
+                <form class="space-y-stack-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Date</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="calendar_month">calendar_month</span>
+                                <input id="res-date" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 pl-10 pr-3 font-body-md text-body-md text-on-surface placeholder-outline-variant focus:border-primary focus:ring-1 focus:ring-primary" type="date">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Time</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="schedule">schedule</span>
+                                <select id="res-time" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 pl-10 pr-8 font-body-md text-body-md text-on-surface appearance-none focus:border-primary focus:ring-1 focus:ring-primary">
+                                    <option>08:00 AM</option>
+                                    <option>09:00 AM</option>
+                                    <option>10:00 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>12:00 PM</option>
+                                    <option>01:00 PM</option>
+                                    <option>02:00 PM</option>
+                                    <option>03:00 PM</option>
+                                    <option>04:00 PM</option>
+                                    <option>05:00 PM</option>
+                                    <option>06:00 PM</option>
+                                    <option>07:00 PM</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">arrow_drop_down</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Party Size</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="group">group</span>
+                            <select id="res-party" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 pl-10 pr-8 font-body-md text-body-md text-on-surface appearance-none focus:border-primary focus:ring-1 focus:ring-primary">
+                                <option>1 Person</option>
+                                <option>2 People</option>
+                                <option>3 People</option>
+                                <option>4 People</option>
+                                <option>5 People</option>
+                                <option>6+ People</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">arrow_drop_down</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md pt-stack-sm border-t border-outline-variant/20">
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Name</label>
+                            <input id="res-name" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Your full name" type="text">
+                        </div>
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Email</label>
+                            <input id="res-email" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Email address" type="email">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-label-md text-label-md text-on-surface-variant mb-unit">Special Requests</label>
+                        <textarea id="res-requests" class="input-soft w-full bg-surface border border-outline-variant rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface placeholder-outline-variant resize-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Any dietary restrictions or seating preferences?" rows="3"></textarea>
+                    </div>
+                    <button id="res-submit-btn" class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] shadow-md" type="button">
+                        Confirm Reservation
+                    </button>
+                </form>
+            </div>
+            <!-- Info & Location -->
+            <div class="lg:col-span-5 flex flex-col gap-gutter">
+                <!-- Map Card -->
+                <div class="bg-surface-container-lowest rounded-xl ambient-shadow-sm overflow-hidden h-64 relative group border border-outline-variant/10">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Neighborhood sanctuary map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSrtj0ByU6TqTX4Q75ybKlpyqp4R4AHAW5RX8muMy_N723F8rCw0IoCHQ2dTug5_UUDMESk1oESGPIBAhBefCP_ZEeHJLOB8I7Fnq9idh9PukGahSsdaHZ7bVyd_BK92NZd3tpVbKNIuUVKevelvkbGGTsfGelM-7LpDQFKGxd-gGAvbMZ7Vdv0sW-XtYbYl7c1DbUTapXLCSK8P1hV2vRfGb84d311kUw75mtqWmch4ZLjHM_Gg2IHAChQInhGXgfNJdrJJs8JQux">
+                    <div class="absolute inset-0 bg-surface/10 backdrop-blur-[1px]"></div>
+                    <div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-sm p-4 rounded-lg shadow-sm border border-outline-variant/20">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+                            <div>
+                                <p class="font-label-md text-label-md text-primary font-semibold">Artisanal Hearth</p>
+                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">123 Hearth Way, Urban Center</p>
+                                <a class="font-label-md text-label-md text-secondary hover:text-primary underline decoration-secondary/30 mt-1 inline-block transition-colors" href="#">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Details Card -->
+                <div class="bg-surface-container-lowest rounded-xl ambient-shadow-sm p-6 md:p-8 flex-grow border border-outline-variant/10">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Connect With Us</h3>
+                    <ul class="space-y-stack-md">
+                        <li class="flex items-center gap-4 border-b border-outline-variant/10 pb-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                                <span class="material-symbols-outlined" data-icon="phone">phone</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant text-sm">Phone</p>
+                                <p class="font-body-md text-body-md text-on-surface">+1 (555) 123-4567</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 border-b border-outline-variant/10 pb-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                                <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant text-sm">Email</p>
+                                <p class="font-body-md text-body-md text-on-surface">hello@artisanalhearth.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+                                <span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant text-sm mb-1">Hours</p>
+                                <div class="space-y-1 font-body-md text-body-md text-on-surface text-sm">
+                                    <div class="flex justify-between w-48">
+                                        <span class="text-on-surface-variant">Mon - Fri</span>
+                                        <span>7:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between w-48">
+                                        <span class="text-on-surface-variant">Sat - Sun</span>
+                                        <span>8:00 AM - 8:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- BottomNavBar (Mobile Only, common across all views) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-md flex justify-around items-center py-3 px-4 z-50 bg-surface/95 backdrop-blur-md border border-outline-variant/30 rounded-full shadow-[0_8px_32px_rgba(51,33,13,0.12)] transition-all duration-300">
+    <a id="mobile-link-home" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px]" href="#home">
+        <span class="material-symbols-outlined mb-1">home</span>
+        <span class="font-label-md text-[10px] leading-tight">Home</span>
+    </a>
+    <a id="mobile-link-menu" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px]" href="#menu">
+        <span class="material-symbols-outlined mb-1">restaurant_menu</span>
+        <span class="font-label-md text-[10px] leading-tight">Menu</span>
+    </a>
+    <a id="mobile-link-story" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px]" href="#story">
+        <span class="material-symbols-outlined mb-1">auto_stories</span>
+        <span class="font-label-md text-[10px] leading-tight">Our Story</span>
+    </a>
+    <a id="mobile-link-contact" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px]" href="#contact">
+        <span class="material-symbols-outlined mb-1">chat_bubble</span>
+        <span class="font-label-md text-[10px] leading-tight">Contact</span>
+    </a>
+</nav>
+
+<!-- Footer (Common footer at the bottom of the page) -->
+<footer class="w-full pb-24 md:pb-12 bg-surface-container-low mt-section-gap px-margin-mobile py-stack-lg flex flex-col gap-stack-md text-center border-t border-outline-variant/10 transition-colors duration-200">
+    <div class="font-headline-md text-headline-md text-primary mb-2">Artisanal Hearth</div>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-stack-md md:gap-gutter font-body-md text-body-md text-secondary">
+        <span class="hover:text-primary underline decoration-primary/30 transition-all cursor-pointer">123 Hearth Way, Urban Center</span>
+        <span class="hidden md:inline text-outline-variant">•</span>
+        <span>Mon-Fri: 7am-6pm</span>
+        <span class="hidden md:inline text-outline-variant">•</span>
+        <span>Sat-Sun: 8am-8pm</span>
+    </div>
+    <div class="flex justify-center gap-gutter mt-stack-sm">
+        <a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-all" href="#">Instagram</a>
+        <a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-all" href="#">Pinterest</a>
+    </div>
+    <div class="mt-stack-lg font-caption text-caption text-secondary/70">
+        © 2024 Artisanal Hearth. Slow Living, High Precision.
+    </div>
+</footer>
+
+<!-- Interactive Reservation Success Dialog Modal -->
+<div id="reservation-modal" class="fixed inset-0 bg-[#33210d]/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-[#fbf9f4] w-full max-w-md rounded-xl p-8 border border-[#d2c4ba]/30 ambient-shadow-lg text-center transform scale-95 transition-transform duration-300">
+        <div class="w-16 h-16 bg-[#323f09]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-[#9bab6a]">
+            <span class="material-symbols-outlined text-[36px] font-bold">event_available</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-[#33210d] mb-2">Reservation Saved</h3>
+        <p class="font-body-md text-[#4e453d] mb-6">We've saved a cozy table for you at the Sanctuary. A verification email has been sent to your inbox.</p>
+        
+        <div class="bg-[#f5f3ee] p-5 rounded-lg border border-[#d2c4ba]/20 mb-6 text-left space-y-2 font-body-md text-sm text-[#4e453d]">
+            <div class="flex justify-between border-b border-[#d2c4ba]/10 pb-1.5">
+                <span class="text-[#80756c]">Reservation ID:</span>
+                <span id="res-confirm-id" class="font-bold text-[#33210d] font-mono">RES-492-H</span>
+            </div>
+            <div class="flex justify-between border-b border-[#d2c4ba]/10 pb-1.5">
+                <span class="text-[#80756c]">Guest Name:</span>
+                <span id="res-confirm-name" class="font-semibold text-[#33210d]">-</span>
+            </div>
+            <div class="flex justify-between border-b border-[#d2c4ba]/10 pb-1.5">
+                <span class="text-[#80756c]">Date & Time:</span>
+                <span id="res-confirm-date-time" class="font-semibold text-[#33210d]">-</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-[#80756c]">Party Size:</span>
+                <span id="res-confirm-party" class="font-semibold text-[#33210d]">-</span>
+            </div>
+        </div>
+        
+        <button id="close-res-modal-btn" class="w-full bg-[#33210d] text-white font-label-md py-3 rounded-lg hover:bg-[#4b3621] soft-transition">
+            Wonderful, Thank You
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

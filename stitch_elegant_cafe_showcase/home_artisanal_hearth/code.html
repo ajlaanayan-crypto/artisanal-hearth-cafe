@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Artisanal Hearth - Home</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts for Theme Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&amp;family=Source+Serif+4:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#bd9f83",
+                        "on-background": "#1b1c19",
+                        "tertiary-container": "#323f09",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f4",
+                        "outline": "#80756c",
+                        "tertiary": "#1e2800",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container": "#f0eee9",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#d2c4ba",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3e4c16",
+                        "primary-fixed-dim": "#e1c1a4",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#9bab6a",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#534434",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#fedcbe",
+                        "error-container": "#ffdad6",
+                        "primary": "#33210d",
+                        "surface-bright": "#fbf9f4",
+                        "on-surface": "#1b1c19",
+                        "on-secondary-fixed": "#241a0c",
+                        "secondary-container": "#f5dfc8",
+                        "on-surface-variant": "#4e453d",
+                        "on-primary-fixed": "#291806",
+                        "secondary-fixed": "#f5dfc8",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#59422c",
+                        "on-tertiary-fixed": "#161f00",
+                        "primary-container": "#4b3621",
+                        "surface-variant": "#e4e2dd",
+                        "inverse-primary": "#e1c1a4",
+                        "tertiary-fixed-dim": "#bdce89",
+                        "on-secondary-container": "#726250",
+                        "background": "#fbf9f4",
+                        "tertiary-fixed": "#d9eaa3",
+                        "secondary": "#6b5c4a",
+                        "surface-tint": "#725a42",
+                        "secondary-fixed-dim": "#d8c3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["\"Source Serif 4\""],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Ambient Shadows & Transitions */
+        .ambient-shadow {
+            box-shadow: 0 4px 24px rgba(51, 33, 13, 0.04), 0 2px 8px rgba(51, 33, 13, 0.02);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 8px 32px rgba(51, 33, 13, 0.08), 0 4px 12px rgba(51, 33, 13, 0.04);
+            transform: translateY(-2px);
+        }
+        .soft-transition {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .image-grain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm ease-in-out transition-all duration-300 border-none">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<!-- Mobile Leading Icon -->
+<button class="md:hidden text-primary hover:text-primary-container transition-colors duration-300 flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<!-- Brand Logo -->
+<div class="font-headline-md text-headline-md text-primary font-extrabold tracking-tight">
+                Artisanal Hearth
+            </div>
+<!-- Desktop Navigation cluster (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-primary font-bold font-label-md text-label-md border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30" href="#">Menu</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 font-label-md text-label-md pb-1 border-b-2 border-transparent hover:border-primary-container/30" href="#">Contact</a>
+</nav>
+<!-- Trailing Icon -->
+<button class="text-primary hover:text-primary-container transition-colors duration-300 flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 md:pb-24 max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap flex flex-col md:flex-row gap-stack-lg items-center">
+<div class="flex-1 flex flex-col gap-stack-md relative z-10 md:pr-12">
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary max-w-lg">
+                    Your Neighborhood Sanctuary
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Experience slow living through high-precision coffee. A tactile space crafted for mindful mornings and quiet afternoons.
+                </p>
+<div class="mt-stack-sm flex gap-4">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT border border-primary-fixed-dim/30 hover:bg-primary-container soft-transition flex items-center gap-2 shadow-[0_4px_12px_rgba(51,33,13,0.15)]">
+                        Explore Menu
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full relative h-[400px] md:h-[600px] rounded-lg overflow-hidden ambient-shadow image-grain bg-surface-container-highest">
+<img class="w-full h-full object-cover soft-transition hover:scale-105 duration-700" data-alt="A macro, top-down photograph of a pristine ceramic mug resting on a natural linen cloth. Inside the mug is a meticulously poured latte art rosette, contrasting beautifully against the rich, dark crema. Warm, diffused morning sunlight spills across the scene, casting long, soft shadows. The aesthetic is clean, modern, and tactile, emphasizing a slow-living coffee culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtMpk1f4GNl1I-pzr63r-_8v9VaWfu8BAQgMz4tZJmYF-9PKFpmp0hCvpR0Nvi_UwHN_-KqWBm_phL-nvXfg8t64UPp9G9RW9nh_LKiZfNhSdhd9eBZMBCUnKK5GLm6KZ-bdj09AGRGxAS35curNrOkqj105tSkA5ynNZvrrnzFdwkLdHWNxzw25-nrjHwGXdSxqY9MVwvLOCwaRsPOCIM2I8jVhBSDYazpOB4Xpa0qnbYbq444MZ5RsPRisWcwIIE_aekGUDymlyT">
+</div>
+</section>
+<!-- Today's Specials (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-md text-headline-md text-primary">Today's Specials</h2>
+<a class="font-label-md text-label-md text-secondary hover:text-primary soft-transition flex items-center gap-1" href="#">
+                    View all <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[280px]">
+<!-- Featured Item -->
+<div class="md:col-span-8 rounded-lg overflow-hidden bg-surface-container-lowest ambient-shadow ambient-shadow-hover soft-transition group relative flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 h-48 md:h-full relative overflow-hidden bg-surface-container-high image-grain">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A glass cup filled with an iced matcha latte, displaying beautiful gradient layers of green and white milk. Condensation gently beads on the outside of the glass. The background is a soft-focus, minimalist cafe interior with natural wood tones and a hint of warm sunlight. The mood is refreshing, premium, and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOLCLSkBAEt0CEOrfTLBPwIjUlht758qZN0AYH2Xobf9nvGvwkDaLLtlFcHB6Oh2mNpBs_CI8ycXXMl9u5-gJcqdozjODR0S7l7AeWxzr3zJy70fUa93gDk3CW8G6am7wFTsfribixcY24Meb9iS65se9Qr0wCDEaN08WFhLOJIxuHLFjiyWV0lv7tq0ESNUxXR5lKzbcnFBNLzH1lnA1hiH185-UgabOtHUqmvn1btYj6k3x708EcfCzIa2r-joyamrXaN6mRmnDH">
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-center w-full md:w-1/2 relative z-10 bg-surface-container-lowest">
+<div class="inline-flex items-center gap-1 bg-tertiary-container text-on-tertiary-container font-caption text-caption px-3 py-1 rounded-full w-max mb-stack-sm">
+<span class="material-symbols-outlined text-[14px]">eco</span> Seasonal
+                        </div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Kyoto Matcha Reserve</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Stone-ground ceremonial grade matcha balanced with delicate steamed oat milk and a touch of organic agave.
+                        </p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary">$6.50</span>
+<button aria-label="Add to order" class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-on-primary soft-transition">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Item -->
+<div class="md:col-span-4 rounded-lg overflow-hidden bg-surface-container-lowest ambient-shadow ambient-shadow-hover soft-transition group relative flex flex-col">
+<div class="h-40 w-full relative overflow-hidden bg-surface-container-high image-grain">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up of a freshly baked, flaky almond croissant resting on a minimalist white ceramic plate. The pastry is dusted with powdered sugar and topped with toasted almond slices. The lighting is bright and airy, casting a gentle shadow that emphasizes the rich textures of the pastry layers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiAbRl-amTXuOL0DDrCIKUZoQTX0vbDwgbv5St7TlNsOYZfk6sSGZjHw_gYHWizftiNlP6Vihite6VoWxdiAitlKpt8Gsg51ZFhAlr9xe_IswCH8NGMWFoJxz3QHHZcM3Frlaj1m0V0JUmOhcPBOGz_8Xjdatgq8cPt4Jg3rcrBPHwyZn1iQ_2gcA5k1KxpWjGlHoIosXiUcTtLogjk3EFCsdhXwuhD2zUCuvYAkDALMC1u7QgIN8x0QzqJM8qI5HPt8WJFQec9srp">
+</div>
+<div class="p-6 flex flex-col flex-grow bg-surface-container-lowest">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-1">Almond Croissant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">
+                            Twice-baked with rich frangipane filling and topped with toasted slivers.
+                        </p>
+<div class="flex justify-between items-center mt-auto pt-2 border-t border-outline-variant/10">
+<span class="font-label-md text-label-md text-primary">$4.75</span>
+<button class="text-secondary hover:text-primary soft-transition flex items-center">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-md flex justify-around items-center py-3 px-4 z-50 bg-surface/90 backdrop-blur-md border border-outline-variant/30 rounded-full shadow-[0_8px_32px_rgba(51,33,13,0.12)] transition-all duration-300">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1.5 flex-1 max-w-[80px] soft-transition" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-[10px] leading-tight">Home</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px] hover:bg-primary/5" href="#">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="font-label-md text-[10px] leading-tight">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px] hover:bg-primary/5" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-md text-[10px] leading-tight">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300 rounded-full px-2 py-1 flex-1 max-w-[80px] hover:bg-primary/5" href="#">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-md text-[10px] leading-tight">Contact</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full pb-24 md:pb-12 bg-surface-container-low mt-section-gap px-margin-mobile py-stack-lg flex flex-col gap-stack-md text-center border-t border-outline-variant/10 transition-colors duration-200">
+<div class="font-headline-md text-headline-md text-primary mb-2">Artisanal Hearth</div>
+<div class="flex flex-col md:flex-row justify-center items-center gap-stack-md md:gap-gutter font-body-md text-body-md text-secondary">
+<span class="hover:text-primary underline decoration-primary/30 transition-all cursor-pointer">123 Hearth Way, Urban Center</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="">Mon-Fri: 7am-6pm</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="">Sat-Sun: 8am-8pm</span>
+</div>
+<div class="flex justify-center gap-gutter mt-stack-sm">
+<a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-all" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary underline decoration-primary/30 transition-all" href="#">Pinterest</a>
+</div>
+<div class="mt-stack-lg font-caption text-caption text-secondary/70">
+            © 2024 Artisanal Hearth. Slow Living, High Precision.
+        </div>
+</footer>
+
+
+</body></html>
